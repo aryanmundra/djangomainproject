@@ -39,7 +39,7 @@
 	</td>
 	<td>
 		<!-- col.// -->
-					<div class="col">
+		<div class="col">
 						<div class="input-group input-spinner">
 							<div class="input-group-prepend">
 							<a href ="{% url 'remove_cart' cart_item.product_id %}" class="btn btn-light" type="button" id="button-plus"> <i class="fa fa-minus"></i> </a>
@@ -47,20 +47,19 @@
 							<input type="text" class="form-control"  value="{{ cart_item.quantity }}">
 							<div class="input-group-append">
 							<a href = "{% url 'add_cart' cart_item.product.id %}" class="btn btn-light" type="button" id="button-minus"> <i class="fa fa-plus"></i> </a>
-							</div>
+              
+              </div>
 						</div> <!-- input-group.// -->
 					</div> <!-- col.// -->
 	</td>
 	<td>
 		<div class="price-wrap">
-			<var class="price">{{ cart_item.sub_total }}</var>
+			<var class="price">Rs {{ cart_item.sub_total }}</var>
 			<small class="text-muted"> Rs {{ cart_item.product.price }} each </small>
       <a href="{% url 'remove_cart_item' cart_item.product_id %}" class="btn btn-danger"> Remove</a>
 		</div> <!-- price-wrap .// -->
 	</td>
-	<!-- <td class="text-right">
-	<a href="{% url 'remove_cart_item' cart_item.product_id %}" class="btn btn-danger"> Remove</a>
-	</td> -->
+
 </tr>
 {% endfor %}
 
@@ -75,15 +74,15 @@
 		<div class="card-body">
 			<dl class="dlist-align">
 			  <dt>Total price:</dt>
-			  <dd class="text-right">{{total}}</dd>
+			  <dd class="text-right">Rs  {{total}}</dd>
 			</dl>
 			<dl class="dlist-align">
 			  <dt>Delivery Fee:</dt>
-			  <dd class="text-right">{{tax}}</dd>
+			  <dd class="text-right">Rs  {{tax}}</dd>
 			</dl>
 			<dl class="dlist-align">
 			  <dt>Grand Total:</dt>
-			  <dd class="text-right text-dark b"><strong>{{grand_total}}</strong></dd>
+			  <dd class="text-right text-dark b"><strong>Rs  {{grand_total}}</strong></dd>
 			</dl>
 			<hr>
 			<p class="text-center mb-3">

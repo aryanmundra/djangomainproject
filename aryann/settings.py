@@ -115,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE =  'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -135,3 +135,16 @@ STATICFILES_DIRS = [
 #media files configuration
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR /'media'
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+      messages.ERROR:'danger',
+}
+
+
+#smtp configuration
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'developeraryann@gmail.com'
+EMAIL_HOST_PASSWORD = 'Aryan1705'
+EMAIL_USE_TLS = True

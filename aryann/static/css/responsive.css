@@ -202,6 +202,9 @@
 	.table-shopping-cart tbody tr td.text-right a.btn.btn-danger{
 		display:block !important;
 	}
+	body div.container section.padding-bottom div.row aside.col-md-6{
+		display: block !important;
+	}
 }
 
 @media (max-width: 1140px){
@@ -211,6 +214,9 @@
 	.table-shopping-cart tbody tr td.text-right a.btn.btn-danger{
 		display:block !important;
 	}
+	body div.container section.padding-bottom div.row aside.col-md-6{
+		display: block !important;
+	}
 }
 @media (max-width: 768px){
 	.table-shopping-cart .itemside .aside{
@@ -218,6 +224,9 @@
 	}
 	.table-shopping-cart tbody tr td.text-right a.btn.btn-danger{
 		display:block !important;
+	}
+	body div.container section.padding-bottom div.row aside.col-md-6{
+		display: block !important;
 	}
 }
 

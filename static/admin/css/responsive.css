@@ -1012,6 +1012,9 @@ input[type="submit"], button {
 	.table-shopping-cart tbody tr td.text-right a.btn.btn-danger{
 		display:block !important;
 	}
+  body div.container section.padding-bottom div.row aside.col-md-6{
+    display: block !important;
+  }
 }
 
 @media (max-width: 1140px){
@@ -1021,6 +1024,9 @@ input[type="submit"], button {
 	.table-shopping-cart tbody tr td.text-right a.btn.btn-danger{
 		display:block !important;
 	}
+  body div.container section.padding-bottom div.row aside.col-md-6{
+    display: block !important;
+  }
 }
 @media (max-width: 768px){
 	.table-shopping-cart .itemside .aside{
@@ -1029,4 +1035,7 @@ input[type="submit"], button {
 	.table-shopping-cart tbody tr td.text-right a.btn.btn-danger{
 		display:block !important;
 	}
+  body div.container section.padding-bottom div.row aside.col-md-6{
+    display: block !important;
+  }
 }
