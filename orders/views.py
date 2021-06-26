@@ -24,6 +24,7 @@ def place_order(request, total=0, quantity=0,):
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid():
+            #storing billig info in order table
             data = Order()
             data.user = current_user
             data.first_name = form.cleaned_data['first_name']
