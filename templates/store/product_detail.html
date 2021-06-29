@@ -27,6 +27,7 @@
                      </div>
                      <p>{{ single_product.description }}</p>
                      <hr>
+                 {% if variations %}
                      <div class="row">
                         <div class="item-option-select">
                            <h6>Choose Color</h6>
@@ -49,6 +50,7 @@
                            </select>
                         </div>
                      </div>
+                 {% endif %}
                      <hr>
                      {% if single_product.stock <= 0 %}
                      <h5 class="text-danger">Out of Stock</h5>
