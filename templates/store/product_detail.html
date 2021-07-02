@@ -52,6 +52,7 @@
 
 
 							<hr>
+							{% if single_product.variation_set %}
 
 							<div class="row">
 								<div class="item-option-select">
@@ -77,6 +78,7 @@
 
 							</div>
 							<hr>
+							{% endif %}
 							{% if single_product.stock <= 0 %}
 							<h5 class="text-danger">Out of Stock</h5>
 							{% else %}

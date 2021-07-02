@@ -81,6 +81,7 @@ class UserProfile(models.Model):
     city = models.CharField(blank=True, max_length=20)
     state = models.CharField(blank=True, max_length=20)
     country = models.CharField(blank=True, max_length=20)
+    profile_form = models.ImageField(blank=True, upload_to='images/users/')
 
     def __str__(self):
         return self.user.first_name
