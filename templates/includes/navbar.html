@@ -170,10 +170,10 @@ body {margin:0;font-family:Arial}
               {% else %}
 
               <div class="widget-header">
-                <medium class="title text-muted ">Welcome {{user.first_name}}</medium>
+                <medium class="title text-muted " style="text-align:center" >Welcome {{user.first_name}}</medium>
                 <div>
-                  <a class= "text-primary text-center" href="{% url 'dashboard'%}">My Orders</a> <span class="dark-transp"> | </span>
-                  <a class= "text-primary text-center" href="{% url 'logout' %}"> Logout</a>
+                  <a class= "text-primary text-center" style="text-align:center" href="{% url 'dashboard'%}">My Orders</a> <span class="dark-transp"> | </span>
+                  <a class= "text-primary text-center" style="text-align:center" href="{% url 'logout' %}"> Logout</a>
                 </div>
               </div>
 

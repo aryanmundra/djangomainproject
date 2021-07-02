@@ -9,6 +9,7 @@ from store.models import Product
 def payments(request):
     #move the cart items to order product table
     cart_items = CartItem.objects.filter(user=request.user)
+    
 
     for item in cart_items:
         orderproduct = OrderProduct()

@@ -24,7 +24,8 @@
 <!-- custom style -->
 <link href="{% static 'css/ui.css' %}" rel="stylesheet" type="text/css"/>
 <link href="{% static 'css/responsive.css' %}" rel="stylesheet" type="text/css" />
-
+<link href="{% static 'css/custom.css' %}" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- custom javascript -->
 <script src="{% static 'js/script.js?v=2.0' %}" type="text/javascript"></script>
 <style>
@@ -106,10 +107,10 @@
               {% else %}
 
               <div class="widget-header">
-                <medium class="title text-muted ">Welcome {{user.first_name}}</medium>
+                <medium class="title text-muted " style="text-align:center">Welcome {{user.first_name}}</medium>
                 <div>
-                  <a class= "text-primary" href="{% url 'dashboard'%}">My Orders</a> <span class="dark-transp"> | </span>
-                  <a class= "text-primary" href="{% url 'logout' %}"> Logout</a>
+                  <a class= "text-primary" style="text-align:center" href="{% url 'dashboard'%}">My Orders</a> <span class="dark-transp"> | </span>
+                  <a class= "text-primary"style="text-align:center" href="{% url 'logout' %}"> Logout</a>
                 </div>
               </div>
 
