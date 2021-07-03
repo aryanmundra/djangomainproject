@@ -85,7 +85,7 @@
 <!-- =============== SECTION 1 =============== -->
 <section class="padding-bottom">
 <header class="section-heading mb-4">
-	<h3 class="title-section">Recommended items</h3>
+	<h3 class="title-section">Popular Products</h3>
 </header>
 
 <div class="row">
@@ -103,7 +103,7 @@
 					</li>
 				</ul>
 				<div>
-					<a href="#" class="text-muted">Clothes</a>
+					{% comment %} <a href="#" class="text-muted">Clothes</a> {% endcomment %}
                 	<a href="{{ product.get_url }}" class="title">{{ product.product_name }}</a>
 				</div>
 				<div class="price h5 mt-2">Rs{{ product.price }}</div> <!-- price.// -->

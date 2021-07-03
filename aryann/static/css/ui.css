@@ -1615,8 +1615,8 @@ body {
 }
 
 .gallery-wrap .img-big-wrap img {
-	height: 480px;
-	width: auto;
+	height: 100%;
+	width: 100%;
 	display: inline-block;
 	cursor: -webkit-zoom-in;
 	cursor: zoom-in
