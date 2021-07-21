@@ -107,7 +107,10 @@
 			<p class="text-center mb-3">
 				<img src="{% static './images/misc/payments.png' %}" height="26">
 			</p>
-			<a href="{% url 'checkout' %}" class="btn btn-primary btn-block"> Cash On Delivery </a>
+			 <div id="paypal-button-container">
+
+			 </div>
+			{% comment %} <a href="{% url 'checkout' %}" class="btn btn-primary btn-block"> Cash On Delivery </a> {% endcomment %}
 			{% comment %} <a href="{% url 'store' %}" class="btn btn-light btn-block">Continue Shopping</a> {% endcomment %}
 		</div> <!-- card-body.// -->
 		</div> <!-- card.// -->
@@ -142,7 +145,7 @@
 	var url = "{% url 'payments' %}"
 	var csrftoken = getCookie('csrftoken');
 	var orderID = "{{order.order_number}}"
-	var payment_method = 'cash on Delivery'
+	var payment_method = 'PayPal'
 	// Render the PayPal button into #paypal-button-container
 	paypal.Buttons({
 
@@ -179,6 +182,7 @@
 						},
 						body: JSON.stringify({
 							orderID: orderID,
+							transID: details.id,
 							payment_method: payment_method,
 							status: details.status,
 						}),
