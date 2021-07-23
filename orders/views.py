@@ -1,14 +1,15 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse, JsonResponse
 from carts.models import CartItem
 from .forms import OrderForm
 import datetime
 from .models import Order, Payment, OrderProduct
-from store.models import Product
 import json
+from store.models import Product
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 
-# Create your views here.
+
 def payments(request):
     body = json.loads(request.body)
     order = Order.objects.get(user=request.user, is_ordered=False, order_number=body['orderID'])
@@ -16,6 +17,7 @@ def payments(request):
     # Store transaction details inside Payment model
     payment = Payment(
         user = request.user,
+        payment_id = body['transID'],
         payment_method = body['payment_method'],
         amount_paid = order.order_total,
         status = body['status'],
@@ -28,7 +30,6 @@ def payments(request):
 
     # Move the cart items to Order Product table
     cart_items = CartItem.objects.filter(user=request.user)
-
 
     for item in cart_items:
         orderproduct = OrderProduct()
@@ -47,26 +48,30 @@ def payments(request):
         orderproduct.variations.set(product_variation)
         orderproduct.save()
 
+
+        # Reduce the quantity of the sold products
         product = Product.objects.get(id=item.product_id)
         product.stock -= item.quantity
         product.save()
 
+    # Clear cart
     CartItem.objects.filter(user=request.user).delete()
 
-    mail_subject = 'Thankyou for your order!'
+    # Send order recieved email to customer
+    mail_subject = 'Thank you for your order!'
     message = render_to_string('orders/order_recieved_email.html', {
-            'user': request.user,
-            'order': order,
+        'user': request.user,
+        'order': order,
     })
     to_email = request.user.email
     send_email = EmailMessage(mail_subject, message, to=[to_email])
     send_email.send()
 
+    # Send order number and transaction id back to sendData method via JsonResponse
     data = {
         'order_number': order.order_number,
         'transID': payment.payment_id,
     }
-
     return JsonResponse(data)
 
 def place_order(request, total=0, quantity=0,):
@@ -83,7 +88,7 @@ def place_order(request, total=0, quantity=0,):
     for cart_item in cart_items:
         total += (cart_item.product.price * cart_item.quantity)
         quantity += cart_item.quantity
-    tax = 100
+    tax = (2 * total)/100
     grand_total = total + tax
 
     if request.method == 'POST':
@@ -127,6 +132,7 @@ def place_order(request, total=0, quantity=0,):
             return render(request, 'orders/payments.html', context)
     else:
         return redirect('checkout')
+
 
 def order_complete(request):
     order_number = request.GET.get('order_number')
