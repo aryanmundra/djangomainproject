@@ -6,4 +6,15 @@ YOUR ORDER HAS BEEN RECIEVED
 
 Order Number: {{order.order_number}}
 
+    Invoiced To:
+    {{order.full_name}}
+    {{order.full_address}}
+    {{order.city}}, {{order.state}}
+    {{order.country}}
+
+
+
+Bill amount:
+Rs{{order.order_total}}
+
 {% endautoescape %}
