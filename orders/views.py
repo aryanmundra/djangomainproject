@@ -12,12 +12,9 @@ from django.template.loader import render_to_string
 
 def payments(request):
     body = json.loads(request.body)
-    order = Order.objects.get(user=request.user, is_ordered=False, order_number=body['orderID'])
-
-    # Store transaction details inside Payment model
+    order = Order.objects.get(user=request.user,order_number=body['orderID'])
     payment = Payment(
         user = request.user,
-        payment_id = body['transID'],
         payment_method = body['payment_method'],
         amount_paid = order.order_total,
         status = body['status'],
@@ -152,7 +149,6 @@ def order_complete(request):
             'order': order,
             'ordered_products': ordered_products,
             'order_number': order.order_number,
-            'transID': payment.payment_id,
             'payment': payment,
             'subtotal': subtotal,
         }
