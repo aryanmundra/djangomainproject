@@ -104,7 +104,10 @@
 			<p class="text-center mb-3">
 				<img src="{% static './images/misc/payments.png' %}" height="26">
 			</p>
-		  <button class="btn btn-primary btn-block" onclick="myFunction()">CASH ON DELIVERY</button>
+			<button class="btn btn-primary btn-block" onclick="document.getElementById('cod').submit();">CASH ON DELIVERY</button>
+		<form id="cod" action="{% url 'payments' %}">
+				{% csrf_token %}
+		</form>
 		</div> <!-- card-body.// -->
 		</div> <!-- card.// -->
 
