@@ -20,7 +20,7 @@ class RegistrationForm(forms.ModelForm):
 
           if password != confirm_password:
                 raise forms.ValidationError(
-                     "password and confirm password does not match!!"
+                     "password and confirm password does not match!"
                      )
 
     def __init__(self, *args, **kwargs):

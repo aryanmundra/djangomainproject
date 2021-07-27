@@ -75,7 +75,7 @@ body {margin:0;font-family:Arial}
   display: block;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1700px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
   }
@@ -85,7 +85,7 @@ body {margin:0;font-family:Arial}
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1700px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
@@ -134,9 +134,11 @@ body {margin:0;font-family:Arial}
 	<div class="container">
 <div class="row align-items-center">
 	<div class="col-lg-2 col-6">
-		<a href="http://bootstrap-ecommerce.com" class="brand-wrap">
-			<img class="logo" src="images/logo.png">
+		<a class="brand-wrap">
+			 {% comment %} <img src="{% static 'images/banners/jewelxa1big.jpg' %}"> {% endcomment %}
 		</a> <!-- brand-wrap.// -->
+    <div>
+    </div>
 	</div>
 	<div class="col-lg-6 col-12 col-sm-12">
 		<form action="{% url 'search' %}" class="search" method='GET'>

@@ -7,6 +7,22 @@
 {% load static %}
 
 {% block content %}
+<style>
+html body div.container section.padding-bottom div.row div.col-xl-3.col-lg-3.col-md-4.col-6 div.card.card-product-grid a.img-wrap img{
+  object-fit: contain;
+}
+html body div.container section.padding-bottom div.row div.col-md-6 div.card.card-banner-lg.bg-dark img.card-img.opacity{
+  max-height: 250px;
+  object-fit: cover;
+  /* border-radius: 11px; */
+}
+html body div.container section.padding-bottom div.row aside.col-md-6 div.card.card-banner-lg.bg-dark img.card-img.opacity{
+  max-height: 250px;
+  object-fit: cover;
+  /* border-radius: 11px; */
+}
+
+</style>
 
 <!-- ========================= SECTION MAIN  ========================= -->
 <section class="section-intro padding-y">
@@ -19,7 +35,7 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="{% static 'images/banners/banner23a.jpg' %}" alt="First slide">
+      <img src="{% static 'images/banners/jewelxalogo.jpg' %}" alt="First slide">
     </div>
     {% comment %} <div class="carousel-item">
       <img src="{% static 'images/banners/banner23.jpg' %}" alt="Second slide">
@@ -56,10 +72,10 @@
 	</div><!-- col // -->
 	<div class="col-md-4">
 		<figure  class="item-feature">
-			<span class="text-primary"><i class="fa fa-2x fa-landmark"></i></span>
+			<span class="text-primary"><i class="fa fa-2x fa-phone"></i></span>
 			<figcaption class="pt-3">
 				<h5 class="title">24/7 Customer Support</h5>
-        <p class="text"> Whatsapp on 9699432001 for order status </p>
+        <p class="text"> Whatsapp on +91-8591737040 for order status </p>
 				 <!-- <p>Whatsapp on 9699432001 for order status
 				 </p> -->
 			</figcaption>
@@ -96,7 +112,7 @@
 			<figcaption class="info-wrap">
                 <ul class="rating-stars mb-1">
                 	<li style="width:80%" class="stars-active">
-						<img src="{% static 'images/icons/stars-active.svg' %}" alt="">
+						 <img src="{% static 'images/icons/stars-active.svg' %}" alt="">
 					</li>
 					<li>
 						<img src="{% static 'images/icons/starts-disable.svg' %}" alt="">
@@ -124,10 +140,10 @@
 	<div class="row">
 		<aside class="col-md-6">
 			<div class="card card-banner-lg bg-dark">
-				<img src="{% static 'images/banners/banner6.jpg' %}" class="card-img opacity">
+				<img src="{% static 'images/items/necklacebanner.jpg' %}" class="card-img opacity">
 				<div class="card-img-overlay text-white">
 
-				  <h2 class="card-title">Big Deal on Clothes</h2>
+				  <h2 class="card-title">Big Deal on Necklace</h2>
           <a href="{% url 'store' %}" class="btn btn-light">Discover</a>
 
 				</div>
@@ -135,10 +151,10 @@
 		</aside>
 		<div class="col-md-6">
       <div class="card card-banner-lg bg-dark">
-				<img src="{% static 'images/banners/banner7.jpg' %}" class="card-img opacity">
+				<img src="{% static 'images/items/jhumkabanner1.jpg' %}" class="card-img opacity">
 				<div class="card-img-overlay text-white">
 
-				  <h2 class="card-title">Big Deal on Clothes</h2>
+				  <h2 class="card-title">Big Deal on Jhumka's</h2>
           <a href="{% url 'store' %}" class="btn btn-light">Discover</a>
 
 				</div>
@@ -154,10 +170,10 @@
 	<div class="row">
 		<aside class="col-md-6">
 			<div class="card card-banner-lg bg-dark">
-				<img src="{% static 'images/banners/banner3.jpg' %}" class="card-img opacity">
+				<img src="{% static 'images/items/banglebanner1.jpg' %}" class="card-img opacity">
 				<div class="card-img-overlay text-white">
 
-				  <h2 class="card-title">Big Deal on Clothes</h2>
+				  <h2 class="card-title">Big Deal on Bangle</h2>
           <a href="{% url 'store' %}" class="btn btn-light">Discover</a>
 
 				</div>
@@ -165,10 +181,10 @@
 		</aside>
 		<div class="col-md-6">
       <div class="card card-banner-lg bg-dark">
-				<img src="{% static 'images/banners/banner4.jpg' %}" class="card-img opacity">
+				<img src="{% static 'images/items/longsetbanner.jpg' %}" class="card-img opacity">
 				<div class="card-img-overlay text-white">
 
-				  <h2 class="card-title">Big Deal on Clothes</h2>
+				  <h2 class="card-title">Big Deal on LongSets</h2>
           <a href="{% url 'store' %}" class="btn btn-light">Discover</a>
 
 				</div>
@@ -184,10 +200,10 @@
 	<div class="row">
 		<aside class="col-md-6">
 			<div class="card card-banner-lg bg-dark">
-				<img src="{% static 'images/banners/banner1.jpg' %}" class="card-img opacity">
+				<img src="{% static 'images/items/ring2banner.png' %}" class="card-img opacity">
 				<div class="card-img-overlay text-white">
 
-				  <h2 class="card-title">Big Deal on Clothes</h2>
+				  <h2 class="card-title">Big Deal on Rings</h2>
           <a href="{% url 'store' %}" class="btn btn-light">Discover</a>
 
 				</div>
@@ -195,10 +211,10 @@
 		</aside>
 		<div class="col-md-6">
       <div class="card card-banner-lg bg-dark">
-				<img src="{% static 'images/banners/banner2.jpg' %}" class="card-img opacity">
+				<img src="{% static 'images/items/choker1banner.jpg' %}" class="card-img opacity">
 				<div class="card-img-overlay text-white">
 
-				  <h2 class="card-title">Big Deal on Clothes</h2>
+				  <h2 class="card-title">Big Deal on RoundSets</h2>
           <a href="{% url 'store' %}" class="btn btn-light">Discover</a>
 
 				</div>

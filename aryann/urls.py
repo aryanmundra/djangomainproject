@@ -21,7 +21,7 @@ from django.conf import settings
 # from django.urls import reverse
 
 urlpatterns = [
-    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    # path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('adminn/', admin.site.urls),
     path('',views.home, name='home'),
     path('store/', include('store.urls')),
