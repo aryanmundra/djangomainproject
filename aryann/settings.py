@@ -121,11 +121,11 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE =  'Asia/Kolkata'
 
-USE_I18N = config('USE_I18N', default=True, cast=bool)
+USE_I18N = True
 
-USE_L10N = config('USE_L10N', default=True, cast=bool)
+USE_L10N = True
 
-USE_TZ = config('USE_TZ', default=True, cast=bool)
+USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
