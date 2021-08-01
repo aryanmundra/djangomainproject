@@ -4,13 +4,14 @@ body {margin:0;font-family:Arial}
 
 .topnav {
   overflow: hidden;
-  background-color:  #e5e5e5;
+  background-color: #4b67ff;
+  color:white;
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: black;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -19,7 +20,7 @@ body {margin:0;font-family:Arial}
 
 .active {
   background-color: #04AA6D;
-  color: black;
+  color: white;
 }
 
 .topnav .icon {
@@ -74,17 +75,17 @@ body {margin:0;font-family:Arial}
   display: block;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1700px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
   }
   .topnav a.icon {
-    float: right;
+    float: left;
     display: block;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1700px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
@@ -106,70 +107,95 @@ body {margin:0;font-family:Arial}
 }
 </style>
 
+
+
 <header class="section-header">
+
+<nav class="navbar navbar-dark navbar-expand p-0 bg-primary">
 <div class="container">
+{% comment %}
+    <ul class="navbar-nav">
+		<li  class="nav-item"><a href="#" class="nav-link"> Call: +99812345678 </a></li>
+		<li class="nav-item dropdown">
 
-<section class="header-main border-bottom">
-<div class="row row-sm">
-	<div class="col-6 col-sm col-md col-lg  flex-grow-0">
-		<a href="http://bootstrap-ecommerce.com" class="brand-wrap">
-			<img class="logo" src="{% static 'images/logo.svg' %}">
-		</a> <!-- brand-wrap.// -->
-	</div>
-	<div class="col-6 col-sm col-md col-lg flex-md-grow-0">
-
-		<!-- mobile-only -->
-		<div class="d-md-none float-right">
-			<a href="#" class="btn btn-light"> <i class="fa fa-bell"></i> </a>
-			<a href="#" class="btn btn-light"> <i class="fa fa-user"></i> </a>
-			<a href="#" class="btn btn-light"> <i class="fa fa-shopping-cart"></i> 2 </a>
-		</div>
-		<!-- mobile-only //end  -->
-
-
-	</div> <!-- col.// -->
-	<div class="col-lg-6 col-xl col-md-5 col-sm-12 flex-grow-1">
-		<form action="{% url 'search' %}" class="search-header" method='GET'>
-			<div class="input-group">
-			    <input type="text" class="form-control" placeholder="Search" style="position: relative;top: -1.2vh",name="keyword">
-		  </div>
-      <div class="col col-lg col-md flex-grow-0">
-    	    <button class="btn btn-block btn-primary" type="submit"> Search </button>
-    	</div>
-
-
-		</form>
-	</div> <!-- col.// -->
-
-	<div class="col col-lg col-md flex-grow-0">
-	    <a href="{% url 'store' %}" class="btn btn-outline-primary">Store</a>
-	</div>
-<div class="col-lg-4 col-sm-6 col-12">
-  <div class="widgets-wrap float-lg-right">
-    <div class="widget-header  mr-3">
-      <a href="{% url 'cart' %}" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
-      <span class="badge badge-pill badge-danger notify">{{cart_count}}</span>
-      <div class="text">
-        <span class="text-muted">Welcome!</span>
-        <div>
-          <a href="#">Sign in</a> |
-          <a href="#"> Register</a>
-        </div>
-      </div>
-    </div>
-  </div> <!-- widgets-wrap.// -->
-</div> <!-- col.// -->
-		 <!-- widgets-wrap.// -->
-
-</div> <!-- row.// -->
-</section> <!-- header-main .// -->
+		</li>
+	</ul> <!-- list-inline //  --> {% endcomment %}
+  </div> <!-- navbar-collapse .// --> <!-- container //  -->
+</nav> <!-- header-top-light.// -->
 <div class="topnav" id="myTopnav">
-  <a href="#" class="active">Categories</a>
+  <a href="{% url 'home' %}">Home</a>
   {% for category in links %}
   <a href="{{ category.get_url }}">{{ category.category_name}}</a>
   {% endfor %}
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
+
+<section class="header-main border-bottom">
+	<div class="container">
+<div class="row align-items-center">
+	<div class="col-lg-2 col-6">
+		<a class="brand-wrap">
+			 {% comment %} <img src="{% static 'images/banners/jewelxa1big.jpg' %}"> {% endcomment %}
+		</a> <!-- brand-wrap.// -->
+    <div>
+    </div>
+	</div>
+	<div class="col-lg-6 col-12 col-sm-12">
+		<form action="{% url 'search' %}" class="search" method='GET'>
+			<div class="input-group w-100">
+			    <input type="text" class="form-control" placeholder="Search" name="keyword">
+			    <div class="input-group-append">
+			      <button class="btn btn-primary" type="submit">
+			        <i class="fa fa-search"></i> Search
+			      </button>
+            <a href="{% url 'store' %}" class="btn btn-outline-primary">Store</a>
+
+			    </div>
+
+		    </div>
+
+		</form> <!-- search-wrap .end// -->
+	</div> <!-- col.// -->
+	<div class="col-lg-4 col-sm-6 col-12">
+		<div class="widgets-wrap float-lg-right">
+
+      <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
+    				<div class="d-flex justify-content-end mb-3 mb-lg-0">
+              {% if user.id is None%}
+    					<div class="widget-header">
+    						<small class="title text-muted">Welcome guest!</small>
+    						<div>
+    							<a class= "text-primary" href="{% url 'login' %}">Sign in</a> <span class="dark-transp"> | </span>
+    							<a class= "text-primary" href="{% url 'register'%}"> Register</a>
+    						</div>
+    					</div>
+              {% else %}
+
+              <div class="widget-header">
+                <medium class="title text-muted " style="text-align:center" >Welcome {{user.first_name}}</medium>
+                <div>
+                  <a class= "text-primary text-center" style="text-align:center" href="{% url 'dashboard'%}">My Orders</a> <span class="dark-transp"> | </span>
+                  <a class= "text-primary text-center" style="text-align:center" href="{% url 'logout' %}"> Logout</a>
+                </div>
+              </div>
+
+              {% endif %}
+    					<a href="{% url 'cart'%}" class="widget-header pl-3 ml-3">
+    						<div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
+    						<span class="badge badge-pill badge-danger notify">{{cart_count}}</span>
+    					</a>
+    				</div> <!-- widgets-wrap.// -->
+    			</div>
+
+       <!-- widgets-wrap.// -->
+	</div> <!-- col.// -->
+</div> <!-- row.// -->
+	</div> <!-- container.// -->
+</section> <!-- header-main .// -->
+
+
+
+
 <script>
 function myFunction() {
   var x = document.getElementById("myTopnav");
@@ -180,10 +206,5 @@ function myFunction() {
   }
 }
 </script>
-
-
-
-<!-- !-- navbar-main  .// -->
-
-</div> <!-- container.// -->
+<!-- </div> <!- container.// -->
 </header> <!-- section-header.// -->
