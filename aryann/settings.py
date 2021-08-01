@@ -29,6 +29,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = [' aryann-env.eba-rtfe8mbj.us-west-2.elasticbeanstalk.com']
+# ALLOWED_HOSTS = []
 
 
 
