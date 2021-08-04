@@ -7,7 +7,9 @@ from .models import Order, Payment, OrderProduct
 import json
 from store.models import Product
 from django.core.mail import EmailMessage
+from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 
 def place_order(request, total=0, quantity=0,):
         current_user = request.user
@@ -114,6 +116,7 @@ def payments(request):
         })
         to_email = request.user.email
         send_email = EmailMessage(mail_subject, message, to=[to_email])
+        send_email.content_subtype = "html"
         send_email.send()
 
         # Send order number and transaction id back to sendData method via JsonResponse
