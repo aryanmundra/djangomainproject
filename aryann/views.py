@@ -14,3 +14,6 @@ def home(request):
         'reviews': reviews,
     }
     return render(request, 'home.html', context)
+
+def contactus(request):
+    return render(request, 'accounts/contactus.html')
