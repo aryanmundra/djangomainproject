@@ -9,6 +9,25 @@ html body section.section-content.padding-y div.container div.row main.col-md-9 
 html body section.section-content.padding-y div.container div.row main.col-md-9 div.row div.col-md-4 figure.card.card-product-grid{
 	margin-bottom: 5px;
 }
+html body section.section-content.padding-y div.container div.row main.col-md-9 div.row div.col-md-4 figure.card.card-product-grid div.img-wrap{
+	height: 230px;
+}
+html body section.section-content.padding-y div.container div.row main.col-md-9 div.row div.col-md-4 figure.card.card-product-grid{
+	/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.64), 0 6px 20px 0 rgba(0, 0, 0, 0.48);
+}
+html body section.section-content.padding-y div.container div.row main.col-md-9 div.row div.col-md-4 figure.card.card-product-grid figcaption.info-wrap div.fix-height{
+	height: 60px;
+}
+html body section.section-content.padding-y div.container div.row main.col-md-9 div.row div.col-md-4{
+	padding-bottom: 7px;
+}
+html body section.section-content.padding-y div.container div.row main.col-md-9 div.row div.col-md-4 figure.card.card-product-grid{
+	border-radius: 8px;
+}
+html body section.section-content.padding-y div.container div.row main.col-md-9 div.row div.col-md-4 figure.card.card-product-grid{
+	border-radius: 8px;
+}
 </style>
 
 <section class="section-pagetop bg">
@@ -83,7 +102,7 @@ html body section.section-content.padding-y div.container div.row main.col-md-9 
 						<!-- <del class="price-old">$1980</del> -->
 					</div> <!-- price-wrap.// -->
 				</div>
-				<a href="{{ product.get_url }}" class="btn btn-block btn-primary">View Details </a>
+				{% comment %} <a href="{{ product.get_url }}" class="btn btn-block btn-primary">View Details </a> {% endcomment %}
 			</figcaption>
 		</figure>
 	</div> <!-- col.// -->
@@ -99,7 +118,7 @@ html body section.section-content.padding-y div.container div.row main.col-md-9 
  <!-- col.// -->
 </div> <!-- row end.// -->
 
-
+<div class="page">
 <nav class="mt-4" aria-label="Page navigation sample">
 	{% if products.has_other_pages %}
   <ul class="pagination">
@@ -124,6 +143,7 @@ html body section.section-content.padding-y div.container div.row main.col-md-9 
   </ul>
 	{% endif %}
 </nav>
+</div>
 
 	</main> <!-- col.// -->
 
