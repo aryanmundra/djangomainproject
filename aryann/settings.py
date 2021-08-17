@@ -29,7 +29,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=True, cast=bool)
 #
 
-ALLOWED_HOSTS = ['Aryann4-env.eba-fhnf32xx.us-east-2.elasticbeanstalk.com']
+# ALLOWED_HOSTS = ['Aryann4-env.eba-fhnf32xx.us-east-2.elasticbeanstalk.com']
 
 
 
