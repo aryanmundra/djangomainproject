@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
-import os
+
 # import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,7 +30,7 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 #
 
 # ALLOWED_HOSTS = ['snt-env.eba-yrsmffcf.us-west-2.elasticbeanstalk.com']
-ALLOWED_HOSTS = ['sntaryan-env.eba-pugppnmz.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = []
 
 
 
