@@ -9,7 +9,9 @@ https://docs.djangoproject.com/en/3.1/howto/deployment/wsgi/
 
 import os
 
-
+import sys
+sys.path.append('C:\Users\Aryan Mahi\Desktop\djangomainproject\env
+')
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'aryann.settings')
