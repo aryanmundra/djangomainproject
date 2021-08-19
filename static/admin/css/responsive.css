@@ -1000,42 +1000,4 @@ input[type="submit"], button {
         font-size: 13px;
         word-break: break-word;
     }
-
-    .navbar-expand .navbar-collapse {
-    flex-direction: column;
-  }
-}
-@media (max-width: 992px){
-	.table-shopping-cart .itemside .aside{
-		display: block !important;
-	}
-	.table-shopping-cart tbody tr td.text-right a.btn.btn-danger{
-		display:block !important;
-	}
-  body div.container section.padding-bottom div.row aside.col-md-6{
-    display: block !important;
-  }
-}
-
-@media (max-width: 1140px){
-	.table-shopping-cart .itemside .aside{
-		display: block !important;
-	}
-	.table-shopping-cart tbody tr td.text-right a.btn.btn-danger{
-		display:block !important;
-	}
-  body div.container section.padding-bottom div.row aside.col-md-6{
-    display: block !important;
-  }
-}
-@media (max-width: 768px){
-	.table-shopping-cart .itemside .aside{
-		display: block !important;
-	}
-	.table-shopping-cart tbody tr td.text-right a.btn.btn-danger{
-		display:block !important;
-	}
-  body div.container section.padding-bottom div.row aside.col-md-6{
-    display: block !important;
-  }
 }
