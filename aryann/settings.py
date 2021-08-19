@@ -29,7 +29,7 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 #
 
 # ALLOWED_HOSTS = ['snt-env.eba-yrsmffcf.us-west-2.elasticbeanstalk.com']
-ALLOWED_HOSTS = ['aryansnt-env.eba-tbzemwkz.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['aryansntcreation-env.eba-y9x2w8fc.us-west-2.elasticbeanstalk.com']
 
 
 
