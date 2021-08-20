@@ -2,6 +2,7 @@
 <style>
 /* @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@200&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+ @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 nav {
 	font-family: 'Roboto', sans-serif;
 }
@@ -102,13 +103,14 @@ nav {
 
     <span class="slide">
       <a href="#" onclick="openSlideMenu()">
-        <i class="fas fa-bars"></i>
+        <i class="fa fa-bars" aria-hidden="true"></i>
       </a>
     </span>
 
     <div id="menu" class="nav">
       <a href="#" class="close" onclick="closeSlideMenu()">
-        <i class="fas fa-times"></i>
+        {% comment %} <i class="fas fa-times"></i> {% endcomment %}
+				<i class="fa fa-times" aria-hidden="true"></i>
       </a>
       <ul>
         <li><a href="{% url 'home' %}">Home</a></li>
