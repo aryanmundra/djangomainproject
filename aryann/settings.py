@@ -109,16 +109,6 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'ebdb',
-#         'USER': 'aryanmundra',
-#         'PASSWORD': 'Aryan1705',
-#         'HOST': 'aa1uhact8j4ikd2.cpuunwon29l0.us-west-2.rds.amazonaws.com',
-#         'PORT': 5432,
-#     }
-# }
 
 
 
