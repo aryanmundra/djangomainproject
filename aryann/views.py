@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from store.models import Product, ReviewRating
+from django.http import HttpResponse
 
 def home(request):
     products = Product.objects.all().filter(is_available=True).order_by('created_date')[:8]
@@ -17,3 +18,6 @@ def home(request):
 
 def contactus(request):
     return render(request, 'accounts/contactus.html')
+
+def sitemap(request):
+     return HttpResponse(open('sitemap.xml').read(), content_type='text/xml')
