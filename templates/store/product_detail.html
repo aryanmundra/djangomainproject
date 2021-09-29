@@ -54,7 +54,11 @@ html body section.section-content.padding-y.bg div.container div.card div.row.no
 								<var class="price h4">Rs {{single_product.price}}</var>
 							</div>
 
+
 							<p>{{ single_product.description }}</p>
+							{% comment %} <p>{{single_product.firm_url}}</p> {% endcomment %}
+
+
 
 
 							<hr>
@@ -89,6 +93,14 @@ html body section.section-content.padding-y.bg div.container div.card div.row.no
 							{% else %}
 							<button type="submit" class="btn  btn-primary"> <span class="text">Add to Cart</span> <i class="fa fa-shopping-cart"></i> </button>
 							{% endif %}
+							&nbsp;
+							&nbsp;
+							&nbsp;
+
+               {% if single_product.firm_url %}
+								<a href ={{ single_product.firm_url }}><i class="fa fa-camera" aria-hidden="true"></i>       Live tryout</a>
+							 {% endif %}
+
 						</article> <!-- product-info-aside .// -->
 					</form>
 				</main> <!-- col.// -->
