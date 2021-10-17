@@ -9,14 +9,15 @@ class ProductGalleryInline(admin.TabularInline):
     extra = 1
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('product_name','price','stock','modified_date','is_available','firm_url')
+    list_display = ('product_name','price','stock','modified_date','is_available','firm_url','is_featured')
+    list_editable = ('is_featured',)
     prepopulated_fields = {'slug':('product_name',)}
     inlines = [ProductGalleryInline]
 
     def show_firm_url(self, obj):
         return format_html("<a href='{url}'>{url}</a>", url=obj.firm_url)
 
-    show_firm_url.short_description = "Firm URL"    
+    show_firm_url.short_description = "Firm URL"
 
 class VariationAdmin(admin.ModelAdmin):
     list_display = ('product','variation_category','variation_value','is_active')
