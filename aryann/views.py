@@ -3,7 +3,7 @@ from store.models import Product, ReviewRating
 from django.http import HttpResponse
 
 def home(request):
-    products = Product.objects.all().filter(is_featured=True).order_by('created_date')[:8]
+    products = Product.objects.all().filter(is_featured=True).order_by('id')[:8]
 
     # Get the reviews
     reviews = None
