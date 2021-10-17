@@ -23,7 +23,7 @@ def store(request, category_slug= None):
         paged_products = paginator.get_page(page)
         product_count = products.count()
     else:
-        products = Product.objects.all().filter(is_available=True).order_by('-created_date')
+        products = Product.objects.all().filter(is_available=True).order_by('created_date')
         paginator = Paginator(products, 8)
         page = request.GET.get('page')
         paged_products = paginator.get_page(page)
